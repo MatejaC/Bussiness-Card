@@ -19,8 +19,8 @@ dd {
   margin: 0;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -53,9 +53,9 @@ select {
 
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -66,3 +66,43 @@ select {
   }
 }
 
+/*colors*/
+
+$white: #ffffff;
+$black: #000000;
+$green-blue: #1e9d9d;
+
+/*fonts*/
+$Asul: "Asul", sans-serif;
+$Roboto: "Roboto", sans-serif;
+
+.container {
+  min-height: 100vh;
+  max-width:1366px;
+  margin: 0 auto;
+  background-color: transparent;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.socialLinks__LinkedIn,
+.socialLinks__Behance,
+.socialLinks__Dribble {
+  max-width: 40px;
+  max-height: 40px;
+  fill: #fff;
+}
+
+@media screen and (max-width: 481px) {
+  .container {
+    background-image: url("/assets/mobile_background.svg");
+  }
+}
+@media screen and (min-width: 482px) {
+ .container{
+    background-image: url("/assets/desktop_background.svg");
+    margin: 0 auto;
+  }
+}
