@@ -82,21 +82,82 @@ select {
   background-size: cover;
 }
 
+.container:not(.portfolio__name) {
+  font-family: "Roboto", sans-serif;
+}
+
+.portfolio__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+  color: #000000;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.6;
+  padding-left: 1rem;
+}
+
+.portfolio__title::before {
+  content: "";
+  border: 0.1rem solid #707070;
+  max-width: 2.5rem;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  margin-right: 1rem;
+}
+
+.portfolio__name {
+  font-family: "Asul", sans-serif;
+}
+
+.socialLinks {
+  color: #ffffff;
+}
+
+.socialLinks__findMe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+}
+
+.socialLinks__findMe::after {
+  content: "";
+  border: 0.1rem solid #ffffff;
+  max-width: 2.5rem;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  margin-left: 1rem;
+}
+
 .socialLinks__LinkedIn,
 .socialLinks__Behance,
 .socialLinks__Dribble {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   max-width: 40px;
   max-height: 40px;
   fill: #fff;
 }
 
-@media screen and (max-width: 481px) {
+@media screen and (max-width: 425px) {
   .container {
     background-image: url("/assets/mobile_background.svg");
   }
 }
 
-@media screen and (min-width: 482px) {
+@media screen and (min-width: 426px) {
   .container {
     background-image: url("/assets/desktop_background.svg");
     margin: 0 auto;

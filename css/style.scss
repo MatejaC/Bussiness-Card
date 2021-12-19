@@ -70,7 +70,9 @@ select {
 
 $white: #ffffff;
 $black: #000000;
+$blackish: #000000cc;
 $green-blue: #1e9d9d;
+$gray-dash: #707070;
 
 /*fonts*/
 $Asul: "Asul", sans-serif;
@@ -78,7 +80,7 @@ $Roboto: "Roboto", sans-serif;
 
 .container {
   min-height: 100vh;
-  max-width:1366px;
+  max-width: 1366px;
   margin: 0 auto;
   background-color: transparent;
   background-position: center center;
@@ -86,22 +88,72 @@ $Roboto: "Roboto", sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.container:not(.portfolio__name) {
+  font-family: $Roboto;
+}
+
+.portfolio__title {
+  display: flex;
+  font-weight: bold;
+  color: $black;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.6;
+  padding-left: 1rem;
+}
+.portfolio__title::before {
+  content: "";
+  border: 0.1rem solid $gray-dash;
+  max-width: 2.5rem;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  margin-right: 1rem;
+}
+
+.portfolio__name {
+  font-family: $Asul;
+}
+
+.socialLinks {
+  color: $white;
+}
+
+.socialLinks__findMe {
+  display: flex;
+  font-size: 1rem;
+  &::after {
+    content: "";
+    border: 0.1rem solid $white;
+    max-width: 2.5rem;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    margin-left: 1rem;
+  }
+}
 
 .socialLinks__LinkedIn,
 .socialLinks__Behance,
 .socialLinks__Dribble {
+  display: flex;
+  display: inline-flex;
   max-width: 40px;
   max-height: 40px;
   fill: #fff;
 }
 
-@media screen and (max-width: 481px) {
+@media screen and (max-width: 425px) {
   .container {
     background-image: url("/assets/mobile_background.svg");
   }
 }
-@media screen and (min-width: 482px) {
- .container{
+@media screen and (min-width: 426px) {
+  .container {
     background-image: url("/assets/desktop_background.svg");
     margin: 0 auto;
   }
