@@ -71,7 +71,13 @@ select {
 
 /*colors*/
 /*fonts*/
+html {
+  font-size: 16px;
+}
+
 .container {
+  display: -ms-grid;
+  display: grid;
   min-height: 100vh;
   max-width: 1366px;
   margin: 0 auto;
@@ -80,6 +86,7 @@ select {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 2.185em 1.5em 2.5em 1.5em;
 }
 
 .container:not(.portfolio__name) {
@@ -90,32 +97,88 @@ select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-weight: bold;
   color: #000000;
   font-size: 1rem;
-  text-align: left;
-  line-height: 1.6;
-  padding-left: 1rem;
+  margin-bottom: 3.5rem;
 }
 
 .portfolio__title::before {
   content: "";
-  border: 0.1rem solid #707070;
-  max-width: 2.5rem;
+  border: 1px solid #707070;
+  height: 2.5rem;
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
-  margin-right: 1rem;
+  margin-right: 2rem;
+  margin-left: 1.2rem;
+}
+
+.portfolio__hello {
+  color: #1e9d9d;
+  font-size: clamp(1.125rem, 1vw, 1.1rem);
 }
 
 .portfolio__name {
   font-family: "Asul", sans-serif;
+  font-size: clamp(3rem, 4vw, 5rem);
+  font-weight: 900;
+}
+
+.portfolio__occupation {
+  font-size: 1.12rem;
+  font-weight: 900;
+}
+
+.portfolio__about-me {
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  font-weight: 300;
+  color: #000000cc;
+  max-width: 224px;
+}
+
+.contact__text,
+.contact__email-tag,
+.contact__phone-tag {
+  font-weight: bold;
+  color: #000000;
+  font-size: 1rem;
+}
+
+.contact__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.contact__text::before {
+  content: "";
+  border: 1px solid #707070;
+  height: 2.5rem;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  margin-right: 2rem;
+  margin-left: 1.2rem;
 }
 
 .socialLinks {
   color: #ffffff;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
 }
 
 .socialLinks__findMe {
@@ -127,14 +190,14 @@ select {
 
 .socialLinks__findMe::after {
   content: "";
-  border: 0.1rem solid #ffffff;
-  max-width: 2.5rem;
+  border: 1px solid #ffffffcc;
+  max-height: 2.5rem;
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
-  margin-left: 1rem;
+  margin-left: 3rem;
 }
 
 .socialLinks__LinkedIn,
@@ -161,6 +224,7 @@ select {
   .container {
     background-image: url("/assets/desktop_background.svg");
     margin: 0 auto;
+    padding: 3.75em 1.97em 4.31em 5.3125em;
   }
 }
 /*# sourceMappingURL=style.css.map */

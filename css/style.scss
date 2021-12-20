@@ -73,12 +73,18 @@ $black: #000000;
 $blackish: #000000cc;
 $green-blue: #1e9d9d;
 $gray-dash: #707070;
+$whitish-dash: #ffffffcc;
 
 /*fonts*/
 $Asul: "Asul", sans-serif;
 $Roboto: "Roboto", sans-serif;
 
+html {
+  font-size: 16px;
+}
+
 .container {
+  display: grid;
   min-height: 100vh;
   max-width: 1366px;
   margin: 0 auto;
@@ -87,6 +93,7 @@ $Roboto: "Roboto", sans-serif;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 2.185em 1.5em 2.5em 1.5em;
 }
 .container:not(.portfolio__name) {
   font-family: $Roboto;
@@ -94,46 +101,96 @@ $Roboto: "Roboto", sans-serif;
 
 .portfolio__title {
   display: flex;
+  align-items: center;
   font-weight: bold;
   color: $black;
   font-size: 1rem;
-  text-align: left;
-  line-height: 1.6;
-  padding-left: 1rem;
-}
-.portfolio__title::before {
-  content: "";
-  border: 0.1rem solid $gray-dash;
-  max-width: 2.5rem;
-  transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  margin-right: 1rem;
-}
+  margin-bottom: 3.5rem;
 
-.portfolio__name {
-  font-family: $Asul;
-}
-
-.socialLinks {
-  color: $white;
-}
-
-.socialLinks__findMe {
-  display: flex;
-  font-size: 1rem;
-  &::after {
+  &::before {
     content: "";
-    border: 0.1rem solid $white;
-    max-width: 2.5rem;
+    border: 1px solid $gray-dash;
+    height: 2.5rem;
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
-    margin-left: 1rem;
+    margin-right: 2rem;
+    margin-left: 1.2rem;
+  }
+}
+
+.portfolio__hello {
+  color: $green-blue;
+  font-size: clamp(1.125rem, 1vw, 1.1rem);
+}
+
+.portfolio__name {
+  font-family: $Asul;
+  font-size: clamp(3rem, 4vw, 5rem);
+  font-weight: 900;
+}
+
+.portfolio__occupation {
+  font-size: 1.12rem;
+  font-weight: 900;
+}
+.portfolio__about-me {
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  font-weight: 300;
+  color: $blackish;
+  max-width: 224px;
+}
+
+.contact__text,
+.contact__email-tag,
+.contact__phone-tag {
+  font-weight: bold;
+  color: $black;
+  font-size: 1rem;
+}
+
+.contact__text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3.5rem;
+
+  &::before {
+    content: "";
+    border: 1px solid $gray-dash;
+    height: 2.5rem;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    margin-right: 2rem;
+    margin-left: 1.2rem;
+  }
+}
+
+.socialLinks {
+  color: $white;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.socialLinks__findMe {
+  display: flex;
+  font-size: 1rem;
+
+  &::after {
+    content: "";
+    border: 1px solid $whitish-dash;
+    max-height: 2.5rem;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    margin-left: 3rem;
   }
 }
 
@@ -156,5 +213,6 @@ $Roboto: "Roboto", sans-serif;
   .container {
     background-image: url("/assets/desktop_background.svg");
     margin: 0 auto;
+    padding: 3.75em 1.97em 4.31em 5.3125em;
   }
 }
