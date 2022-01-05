@@ -78,6 +78,10 @@ html {
 .container {
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
   min-height: 100vh;
   max-width: 1366px;
   margin: 0 auto;
@@ -86,11 +90,35 @@ html {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 2.185em 1.5em 2.5em 1.5em;
+  position: relative;
 }
 
 .container:not(.portfolio__name) {
   font-family: "Roboto", sans-serif;
+}
+
+.Allie__pic {
+  position: absolute;
+  bottom: 0;
+  right: -3rem;
+  left: 4rem;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  z-index: 2;
+}
+
+.portfolio {
+  padding: 2rem 0 0 1.5rem;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
 }
 
 .portfolio__title {
@@ -103,7 +131,7 @@ html {
   font-weight: bold;
   color: #000000;
   font-size: 1rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 }
 
 .portfolio__title::before {
@@ -121,7 +149,7 @@ html {
 
 .portfolio__hello {
   color: #1e9d9d;
-  font-size: clamp(1.125rem, 1vw, 1.1rem);
+  font-size: clamp(1.125rem, 5vw, 1.1rem);
 }
 
 .portfolio__name {
@@ -131,24 +159,28 @@ html {
 }
 
 .portfolio__occupation {
-  font-size: 1.12rem;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
   font-weight: 900;
+  margin-bottom: 0.5rem;
 }
 
 .portfolio__about-me {
-  font-size: 1rem;
-  line-height: 1.1875rem;
+  font-size: clamp(0.75rem, 5vw, 1.25rem);
+  line-height: 1.2rem;
   font-weight: 300;
   color: #000000cc;
-  max-width: 224px;
+  max-width: 250px;
+  margin-bottom: 5rem;
 }
 
-.contact__text,
-.contact__email-tag,
-.contact__phone-tag {
-  font-weight: bold;
-  color: #000000;
-  font-size: 1rem;
+.contact {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+  padding-left: 1.5rem;
 }
 
 .contact__text {
@@ -158,7 +190,6 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 3.5rem;
 }
 
 .contact__text::before {
@@ -174,11 +205,37 @@ html {
   margin-left: 1.2rem;
 }
 
+.contact__text,
+.contact__email-tag,
+.contact__phone-tag {
+  font-weight: bold;
+  color: #000000;
+  font-size: 1rem;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #000000cc;
+  text-decoration: none;
+}
+
 .socialLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: #ffffff;
-  display: -ms-grid;
-  display: grid;
-  grid-auto-flow: column;
+  -ms-grid-row: 3;
+  grid-row: 3 / 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  z-index: 10;
 }
 
 .socialLinks__findMe {
@@ -186,6 +243,7 @@ html {
   display: -ms-flexbox;
   display: flex;
   font-size: 1rem;
+  font-weight: bold;
 }
 
 .socialLinks__findMe::after {

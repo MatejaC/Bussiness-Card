@@ -85,6 +85,8 @@ html {
 
 .container {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   min-height: 100vh;
   max-width: 1366px;
   margin: 0 auto;
@@ -93,19 +95,37 @@ html {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 2.185em 1.5em 2.5em 1.5em;
+  // padding: 2.185em 1.5em 2.5em 1.5em;
+  position: relative;
 }
 .container:not(.portfolio__name) {
   font-family: $Roboto;
 }
 
+.Allie__pic {
+  position: absolute;
+  bottom: 0;
+  right: -3rem;
+  left: 4rem;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  grid-column: 1 / 4;
+  z-index: 2;
+
+}
+.portfolio {
+  padding: 2rem 0 0 1.5rem;
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
 .portfolio__title {
   display: flex;
   align-items: center;
   font-weight: bold;
   color: $black;
   font-size: 1rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 
   &::before {
     content: "";
@@ -123,7 +143,7 @@ html {
 
 .portfolio__hello {
   color: $green-blue;
-  font-size: clamp(1.125rem, 1vw, 1.1rem);
+  font-size: clamp(1.125rem, 5vw, 1.1rem);
 }
 
 .portfolio__name {
@@ -133,23 +153,24 @@ html {
 }
 
 .portfolio__occupation {
-  font-size: 1.12rem;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
   font-weight: 900;
-}
-.portfolio__about-me {
-  font-size: 1rem;
-  line-height: 1.1875rem;
-  font-weight: 300;
-  color: $blackish;
-  max-width: 224px;
+  margin-bottom: 0.5rem;
 }
 
-.contact__text,
-.contact__email-tag,
-.contact__phone-tag {
-  font-weight: bold;
-  color: $black;
-  font-size: 1rem;
+.portfolio__about-me {
+  font-size: clamp(0.75rem, 5vw, 1.25rem);
+  line-height: 1.2rem;
+  font-weight: 300;
+  color: $blackish;
+  max-width: 250px;
+  margin-bottom: 5rem;
+}
+
+.contact {
+  grid-row: 2 / 3;
+  grid-column: 1 / 3;
+  padding-left: 1.5rem;
 }
 
 .contact__text {
@@ -170,16 +191,38 @@ html {
     margin-left: 1.2rem;
   }
 }
+.contact__text,
+.contact__email-tag,
+.contact__phone-tag {
+  font-weight: bold;
+  color: $black;
+  font-size: 1rem;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  color: $blackish;
+  text-decoration: none;
+}
 
 .socialLinks {
+  display: flex;
   color: $white;
-  display: grid;
-  grid-auto-flow: column;
+  grid-row: 3 / 3;
+  grid-column: 1 / 4;
+  z-index: 10;
 }
 
 .socialLinks__findMe {
   display: flex;
   font-size: 1rem;
+  font-weight: bold;
 
   &::after {
     content: "";
