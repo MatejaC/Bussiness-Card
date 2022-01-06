@@ -88,6 +88,7 @@ html {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   min-height: 100vh;
+  max-height: 812px;
   max-width: 1366px;
   margin: 0 auto;
   background-color: transparent;
@@ -95,7 +96,6 @@ html {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  // padding: 2.185em 1.5em 2.5em 1.5em;
   position: relative;
 }
 .container:not(.portfolio__name) {
@@ -104,16 +104,15 @@ html {
 
 .Allie__pic {
   position: absolute;
-  bottom: 0;
-  right: -3rem;
-  left: 4rem;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  grid-row: 2 / 4;
-  grid-column: 1 / 4;
+  bottom: 3.6rem;
+  left: 6rem;
+  grid-column: 1 / -1;
   z-index: 2;
-
+  height: 92%;
+  width: 88%;
+  opacity: 1;
 }
+
 .portfolio {
   padding: 2rem 0 0 1.5rem;
   grid-column: 1 / 4;
@@ -168,9 +167,13 @@ html {
 }
 
 .contact {
-  grid-row: 2 / 3;
-  grid-column: 1 / 3;
+  grid-column: 1 / 2;
   padding-left: 1.5rem;
+}
+
+.Allie__pic,
+.contact {
+  grid-row: 2 / 3;
 }
 
 .contact__text {
@@ -200,28 +203,32 @@ html {
 }
 
 a:link,
-a:visited,
-a:hover,
-a:active {
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 300;
-  font-size: 1rem;
-  color: $blackish;
+  margin-top: 0.4rem;
+}
+.contact__email-adress,
+.contact__phone-nmb {
+  & a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 1rem;
+    color: $blackish;
   text-decoration: none;
 }
 
-.socialLinks {
-  display: flex;
+.find__me {
   color: $white;
-  grid-row: 3 / 3;
-  grid-column: 1 / 4;
+  grid-column: 1 / 3;
   z-index: 10;
+  padding-left: 1.5rem;
 }
 
-.socialLinks__findMe {
+.find__me {
   display: flex;
-  font-size: 1rem;
+  font-size: clamp(1rem, 5vw, 1.2rem);
   font-weight: bold;
 
   &::after {
@@ -234,17 +241,30 @@ a:active {
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     margin-left: 3rem;
+    margin-top: -0.45rem;
   }
+}
+
+.socialLinks {
+  grid-column: 2 / -1;
+  z-index: 10;
+  margin-left: 3.5rem;
+}
+
+.find__me,
+.socialLinks {
+  grid-row: 2 / -1;
+  align-self: center;
+  margin-top: 22rem;
 }
 
 .socialLinks__LinkedIn,
 .socialLinks__Behance,
 .socialLinks__Dribble {
-  display: flex;
   display: inline-flex;
   max-width: 40px;
-  max-height: 40px;
   fill: #fff;
+  padding-right: 0.8rem;
 }
 
 @media screen and (max-width: 425px) {
@@ -256,6 +276,9 @@ a:active {
   .container {
     background-image: url("/assets/desktop_background.svg");
     margin: 0 auto;
-    padding: 3.75em 1.97em 4.31em 5.3125em;
+  }
+  .Allie__pic {
+    height: 143%;
+    width: 48%;
   }
 }
