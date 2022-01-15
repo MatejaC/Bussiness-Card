@@ -187,7 +187,7 @@ html {
   font-weight: 300;
   color: $blackish;
   max-width: 250px;
-  margin-bottom: 3.1rem;
+  margin-bottom: 2.1rem;
 }
 
 /* section with contact information */
@@ -207,7 +207,7 @@ html {
 }
 
 .Allie__pic img {
-  aspect-ratio: 2 / 2.8;
+  aspect-ratio: 2 / 2.58;
   -o-object-fit: contain;
   object-fit: contain;
   margin-left: 4rem;
@@ -276,7 +276,7 @@ html {
 
 .find__me {
   display: flex;
-  font-size: clamp(1rem, 5vw, 1.2rem);
+  font-size: clamp(1rem, 5vw, 1.1875rem);
   font-weight: bold;
 
   &::after {
@@ -296,7 +296,7 @@ html {
 .socialLinks {
   grid-column: 2 / -1;
   z-index: 2;
-  margin-left: 1.5rem;
+  margin-left: 0.6rem;
 }
 
 /* overlaping grid columns */
@@ -304,31 +304,38 @@ html {
 .socialLinks {
   grid-row: 2 / -1;
   align-self: center;
-  margin-top: 26rem;
+  margin-top: 22rem;
 }
 
 .socialLinks__LinkedIn,
 .socialLinks__Behance,
 .socialLinks__Dribble {
   display: inline-flex;
-  max-width: 45px;
-  max-height: 45px;
+  max-width: 44px;
+  max-height: 44px;
   fill: #fff;
   padding-right: 1rem;
+  opacity: 1;
 }
 
-@media screen and (max-width: 425px) {
+/* media screen...*/
+
+@media screen and (max-width: 380px) {
   .container {
     background-image: url("/assets/mobile_background.svg");
+    margin: 0 auto;
   }
 }
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 381px) and (max-width: 1366px) {
   .container {
     background-image: url("/assets/desktop_background.svg");
     margin: 0 auto;
   }
-  .Allie__pic {
-    height: 143%;
-    width: 48%;
+}
+@media screen and (min-width: 1366px) {
+  .container {
+    max-width: 1366px;
+    background-image: url("/assets/desktop_background.svg");
+    margin: 0 auto;
   }
 }
